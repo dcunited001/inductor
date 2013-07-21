@@ -2,11 +2,21 @@
   (:require [clojure.test :refer :all]
             [inductor.core :refer :all]))
 
-(deftest a-test
-  (testing "FIXME, I fail."
-    (is (= 0 1))))
 
-(deftest test-syspack
-  (testing "Testing packing a sysex message")
-    (is (= (read-string "0xF0")))
-)
+(ns inductor.sysex-test
+  (:require [clojure.test :refer :all]
+            [inductor.sysex :refer :all]))
+
+(ns gloss.test.bytes
+  (:use
+    [gloss.data bytes]
+    [gloss.data.bytes.delimited :only (delimited-bytes-splitter)]
+    [gloss.core formats])
+  (:use [clojure test])
+  (:import [java.nio ByteBuffer]))
+
+(defn byte-seq [^ByteBuffer buf]
+  (let [buf (duplicate buf)]
+    (lazy-seq
+      (when (.hasRemaining buf)
+        (cons (.get buf) (byte-seq buf))))))
