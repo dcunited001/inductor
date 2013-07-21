@@ -5,9 +5,11 @@ A Clojure DSL for specifying sysex formatted messages, using [gloss](https://git
 Intended for use with [Overtone](https://github.com/overtone/overtone) devices.
 For an example, see the [nanoKontrol](https://github.com/overtone/overtone/blob/master/src/overtone/device/midi/nanoKONTROL2.clj) device.
 
-## Usage
+## Microkorg
 
-FIXME
+I lost my radias sysex files, but found some microkorg syx files online to use as test data.
+
+[Here](http://www.korg.com/uploads/Support/MK1_633652915168960000.pdf) is a link to the Microkorg MIDI implementation docs.
 
 ## License
 
