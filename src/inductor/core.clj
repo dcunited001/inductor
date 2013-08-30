@@ -25,22 +25,23 @@
 ;; —
 ;; F7: end of exclusive
 
-(defcodec hdr (enum :byte { :hdr 0xf0 }))
-(defcodec vendor (enum :byte { :korg 0x42 }))
-(defcodec device (enum :byte { :1 0x30 :2 0x31 }))
-(defcodec model (enum :byte { :microkorg 0x58 }))
+(defcodec hdr (enum :ubyte { :hdr 0xF0 }))
+(defcodec vendor (enum :ubyte { :korg 0x42 }))
+(defcodec model (enum :ubyte { :microkorg 0x58 }))
+(defcodec device (enum :ubyte :device ))
 
 ;; (defmacro system-exclusive-header)
 ;; (defmacro system-exclusive-footer)
 
-(defcodec req (enum :byte { :send 0x12 :recv 0x11 }))
-(defcodec address ())
+(defcodec req (enum :ubyte { :send 0x12 :recv 0x11 }))
+
+;; (defcodec address ())
 
 ;; (defcodec address) ;; the address of the setting 
 ;; (defcodec param) ;; the parameter we're sending (only for req=0x12)
 ;; (defcodec roland-checksum) 
 
-(defcodec footer (enum :byte { :ftr 0xf7 }))
+(defcodec footer (enum :ubyte { :ftr 0xf7 }))
 
 ;; write macro to define sysex messages
 
