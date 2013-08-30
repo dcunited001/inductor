@@ -11,6 +11,9 @@
 ;; is MIDI/Sysex big-endian or little-endian?
 ;; - i think big-endian, but not sure
 
+;; writing these byte-arrays to files, for fixtures
+;; - http://stackoverflow.com/questions/11321264/saving-an-image-form-chttp-request-to-file
+
 (ns inductor.core-test
   (:require [clojure.test :refer :all]
             [inductor.core :refer :all]))
