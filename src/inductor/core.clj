@@ -1,9 +1,21 @@
-(ns inductor.core (:use gloss.core))
-(ns inductor.sysex (:use gloss.core))
+(ns inductor.core 
+  (:use [gloss core io]
+        [clojure.java.io]
+        [overtone/midi-clj :as midi]))
 
-;; sample sysex msg
-;; e.g. sysex_msg = [0xF0, 0x41, 0x10, 0x42, 0x12, 0x40, 0x00, 0x7F, 0x00, 0x41, 0xF7]
-;; e.g. korg_msg  = [0xF0, 0x42, 0x30, 0x58, 0x12, ... , 0xF7]
+;; (defn read-from-file [buffer filename] 
+;;   (.read (input-stream filename) buffer))
+
+;; (defn read-from-string [buffer sbytes]
+
+;; )
+
+;; (.read (input-stream "test/data/PJPfiles_2011.syx") buffer-8bit)
+;; (decode example-codec buffer-8bit)
+
+;;(encode example-codec {:id 42, :msg-type :a, :status "A-OKAY"})
+
+;;(ns inductor.sysex (:use gloss.core))
 
 ;; microKORG format
 ;; F0: exclusive status
